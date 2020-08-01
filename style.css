@@ -1,0 +1,57 @@
+.index{
+	color: blue;
+	
+}
+.large-img{
+	max-width:50%;
+  	max-height:400px;
+  	display:block;
+  	margin:auto;
+}
+.crop-img{
+	margin-bottom: 10px;
+	max-width: 50%;
+	max-height: 400px;
+
+}
+.chapter-thumbnail{
+	margin-top: 10px;
+	white-space: pre;
+	overflow: hidden;
+	max-height: 150px;
+	height: 150px;
+	border-radius: 10px;
+
+}
+#mainViewer{
+	margin-top:10px;
+	white-space: pre;
+}
+
+.night{
+	background: black;
+	color: white;
+}
+.cover_img{
+	width: 75%;
+	border: 20px solid black;
+	max-height: 600px;
+
+}
+.photo_list{
+	width: 75%;
+	max-height: 500px;
+	padding: 10px;
+	border: 20px solid black;
+}
+.photo_list_wedding{
+	width: 75%;
+	max-height: 300px;
+	padding: 10px;
+	border: 20px solid black;
+}
+.carousel-img{
+    margin: auto;
+    padding: 10px;
+    max-height:300px;
+    max-width:100%;

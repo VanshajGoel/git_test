@@ -1,0 +1,125 @@
+<html>
+	<head>
+			   <title>Albums</title>
+			   <link href="css/bootstrap.css" rel="stylesheet">
+			   <link rel="stylesheet"
+			  		type="text/css"
+			  		href="style.css"/>
+
+   			   <script src="js/jquery-2.1.4.min.js"></script>
+    		   <script src="js/bootstrap.min.js"></script>	
+			   <script src="js/handlebars-v3.0.3.js"></script>		
+			   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+               <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	</head>	
+			<body role="document">
+
+			    
+				<nav class="nav navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button
+							type="button"
+							class="navbar-toggle collapsed"
+							data-toggle="collapse"
+							data-target="#main_navbar"
+							aria-expanded="false"aria-controls="navbar">
+				              <span class="sr-only">Toggle navigation</span>
+				              <span class="icon-bar"></span>
+				              <span class="icon-bar"></span>
+				              <span class="icon-bar"></span>
+				            </button>
+					</div>
+					<div class="collapse navbar-collapse"
+					     id="main_navbar">
+					
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="About.html">About me</a></li>
+						<li><a href="Contact.html">contact me </a></li>
+						<li><a href="Image_gallery.html">My gallery</a></li>
+						<li><a href="e_reader.html">E-Reader</a></li>
+						<li class="active"><a href="MyAlbums.html">My Albums</a></li>
+					</ul>
+				
+					</div>
+				</div>
+			</nav>
+				<h1 id="title">
+					My Albums
+				</h1>
+				<div class="navbar-form navbar-right">
+			    	<input id="searchbox" type="text" class="form-control" placeholder="Search..">
+			    </div>
+				<ol class="breadcrumb">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="MyAlbums.html">My albums</a></li>
+				</ol>
+
+			    <div id="content" class="container-fluid" role="main"> 
+    		    </div>
+    		
+    		    <script id="album-template" type="text/x-handlebars-template">
+    		    	<div class="row">
+    		    		{{#each images}}
+    		    		<a href="{{href}}"><div class="col-md-6">
+    		    		  <img class="cover_img" src="{{src}}" />
+	    		    		  <div class='author'>
+	    		    		  	<h2>{{title}}</h2>
+	    		    		  </div>	
+    		    		</div>
+    		    		{{/each}}
+    		    	</div>
+    		    </script>
+
+    		    </body>
+
+    		    <script type="text/javascript">
+    		    	var source = $("#album-template").html();
+    		    	var template= Handlebars.compile(source)
+
+    		    	var data = {images:[
+    		    	{
+    		    		href:'Wedding_all.html',
+    		    		src:"./Wedding/Img_1.jpg",
+    		    		title:'Wedding'
+    		    	},
+    		    	{
+    		    		href:'Chandighar_all.html',
+    		    		src:"./Chandighar/Img_1.jpg",
+    		    		title:'Chandigar'
+    		    	},
+    		    	{
+    		    		href:'Jammu_all.html',
+    		    		src:"./Jammu/Img_1.jpg",
+    		    		title:'Jammu'
+    		    	},
+    		    	{
+    		    		href:'Yamnotri_all.html',
+    		    		src:"./Yamnotri/Img_1.jpg",
+    		    		title:'Yamnotri'
+    		    	},
+    		    	]};
+
+    		    var html = template(data);
+    		    $("#content").html(html);
+
+   		  		
+   		  		$('#searchbox').keypress(function(e){
+   		  			if (e.which==13){
+   		  				var search_text=$('#searchbox').val()
+   		  				console.log(search_text)
+   		  			var filteredData={
+   		  				images: data.images.filter(function(d){
+   		  					if(d.title.search(search_text)>-1){
+   		  						return true;
+   		  					}
+   		  				return false;	
+   		  				})	
+   		  			};
+   		    var html= template(filteredData);
+   		  	$('#content').html(html);
+   		  }
+   		  	});
+     </script>
+</html>		

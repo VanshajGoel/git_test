@@ -1,0 +1,80 @@
+<html>
+	<head>
+		
+		<title>Second web-page!</title>
+		<link href="css/bootstrap.css" rel="stylesheet">
+			<link rel="stylesheet"
+			  type="text/css"
+			  href="style.css"/>  
+			   	 
+			   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+               <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+			  
+	</head>	
+			<body>
+				<nav class="nav navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button
+							type="button"
+							class="navbar-toggle collapsed"
+							data-toggle="collapse"
+							data-target="#main_navbar"
+							aria-expanded="false"aria-controls="navbar">
+				              <span class="sr-only">Toggle navigation</span>
+				              <span class="icon-bar"></span>
+				              <span class="icon-bar"></span>
+				              <span class="icon-bar"></span>
+				            </button>
+					</div>
+					<div class="collapse navbar-collapse"
+					     id="main_navbar">
+					<ul class="nav navbar-nav">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="About.html">About me</a></li>
+						<li class="active"><a href="Contact.html">contact me </a></li>
+						<li><a href="Image_gallery.html">My gallery</a></li>
+						<li><a href="e_reader.html">E-Reader</a></li>
+						<li><a href="MyAlbums.html">My Albums</a></li>
+					</ul>
+					</div>
+				</div>
+			</nav>
+			<h1>All about me</h1>
+			<ol class="breadcrumb">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="Contact.html">Contact me</a></li>
+			</ol>
+				<p>
+					<ul>
+						<li>Name- Vanshaj Goel</li >
+						<li>College- UPES</li>
+						<li>Branch- AI & ML</li>
+						<li>Email- vanshaj.goel17@gmail.com</li>
+						<li id="title" onclick="copy();">Mobile- 7415897242</li>
+					</ul>	
+					
+			    </p>
+			    <p >
+
+			    	Click <span  id="title" onclick="fuck();" class="index">here to view</span> Vanshaj Goel's password
+			    </p>
+			    <script type="text/javascript">
+			    	function copy(){
+			    		console.log('Dont copy my number');
+			    		$("#title").html("Dont copy my number");
+			    		$("#title").click(function(){
+			    			$("#title").html("Mobile- 7415897242");
+			    			$("#title").off("click");
+			    		});
+			    	};
+			    </script>
+			    <script type="text/javascript">
+			    	function fuck(){
+			    		alert('Fuck off!!')
+			    	}
+			    </script>
+			    <script src="js/jquery.min.js"></script>
+    			<script src="js/bootstrap.min.js"></script>
+			</body>
+		</html>	    		
